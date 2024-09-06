@@ -1,0 +1,20 @@
+version: '1'
+
+services:
+  bh_backend:
+    build: ./bh_backend  # Path to the Django backend directory
+    container_name: bh_backend
+    volumes:
+      - ./bh_backend:/app  # Mount the backend code to the container
+    ports:
+      - "8000:8000"     # Map port 8000 of the container to port 8000 on the host
+
+  bh_frontend:
+    build: ./bh_frontend  # Path to the Next.js frontend directory
+    container_name: bh-frontend
+    ports:
+      - "3000:3000"     # Map port 3000 of the container to port 3000 on the host
+    environment:
+      - NEXT_PUBLIC_BACKEND_URL=http://localhost:8000/api  # Backend URL
+    depends_on:
+      - bh_backend
