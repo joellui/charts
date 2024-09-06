@@ -36,8 +36,8 @@ README.md               # This file
 First, clone the project to your local machine:
 
 ```bash
-git clone https://github.com/your-repo/your-project.git
-cd your-project
+git clone https://github.com/joellui/charts.git
+cd charts
 ```
 
 ### Step 2: Build and Run the Containers
